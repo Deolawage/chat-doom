@@ -1,0 +1,1 @@
+// renderPosts.js
