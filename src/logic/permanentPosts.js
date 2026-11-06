@@ -12,7 +12,7 @@ const permanentPosts = [
      {
         postId: "permanent-002",
         pseudoName: "Yorokobi Itami",
-        content: "Some thoughts deserve to be heard, even when nobody knows who said them.",
+        content: "Sometimes we what to be heard but we are afarid of the option of others, we are afraid to say the things that hurt us., that make us cry, don't worry, here noone is watching, every thought deserve to be heard, even when nobody knows who said them.",
         createdAt: 1794000001000,
         lifespan: Infinity,
     },
@@ -20,7 +20,7 @@ const permanentPosts = [
      {
         postId: "permanent-003",
         pseudoName: "Yorokobi Itami",
-        content: "You are allowed to be a different person every day.",
+        content: "Here, you are allowed to be a different person every day.",
         createdAt: 1794000002000,
         lifespan: Infinity,
     },
