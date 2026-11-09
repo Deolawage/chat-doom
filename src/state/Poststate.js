@@ -41,6 +41,11 @@ export default class PostState {
                 }
         }
     }
+     
+    getRegularPosts() {
+        return [...this.regularPosts.values()];
+    }
+
 
     getDisplayPosts() {
         return [

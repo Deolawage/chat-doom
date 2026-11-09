@@ -1,7 +1,4 @@
 
-/* =========================
-   Global styles
-========================= */
 
 * {
   box-sizing: border-box;
@@ -12,12 +9,19 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
   color: #e7e9ea;
-  background-color: #000;
+  --bg--: #000;
+  --border--: #2f3336;
+  --content--: #16181c;
+  --text--:#e7e9ea;
+  --limit--:#71767b;
+  --focus--:#1d9bf0;
+  --submitHover--: #ff0000;
+  --submitBtn--:#cfd9de;
 }
 
 body {
   min-height: 100vh;
-  background-color: #000;
+  background-color: var(--bg--);
   line-height: 1.5;
 }
 
@@ -26,26 +30,20 @@ textarea {
   font: inherit;
 }
 
-/* =========================
-   Application layout
-========================= */
+
 
 .app-container {
   width: 100%;
-  max-width: 650px;
+  max-width: 750px;
   min-height: 100vh;
   margin: 0 auto;
-  border-right: 1px solid #2f3336;
-  border-left: 1px solid #2f3336;
 }
 
-/* =========================
-   Header
-========================= */
+/*Header */
 
 .app-header {
   padding: 20px;
-  border-bottom: 1px solid #2f3336;
+  border-bottom: 1px solid var(--border--);
 }
 
 .app-header h1 {
@@ -54,13 +52,11 @@ textarea {
   letter-spacing: -0.5px;
 }
 
-/* =========================
-   Post composer
-========================= */
+/* Post composer */
 
 .composer-section {
   padding: 20px;
-  border-bottom: 1px solid #2f3336;
+  border-bottom: 1px solid var(--border--);
 }
 
 #post-form {
@@ -79,20 +75,20 @@ textarea {
   min-height: 120px;
   padding: 15px;
   resize: vertical;
-  color: #e7e9ea;
-  background-color: #16181c;
-  border: 1px solid #2f3336;
+  color: var(--text--);
+  background-color: var(--content--);
+  border: 1px solid var(--border--);
   border-radius: 8px;
   outline: none;
   transition: border-color 0.2s ease;
 }
 
 #post-content::placeholder {
-  color: #71767b;
+  color: var(--limit--);
 }
 
 #post-content:focus {
-  border-color: #1d9bf0;
+  border-color: var(--focus--);
 }
 
 .composer-footer {
@@ -103,32 +99,30 @@ textarea {
 }
 
 .character-limit {
-  color: #71767b;
+  color: var(--limit--);
   font-size: 12px;
 }
 
 #submit-post {
-  padding: 9px 22px;
-  color: #000;
-  background-color: #e7e9ea;
+  padding: 9px 20px;
+  color: var(--bg--);
+  background-color: var(--text--);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 #submit-post:hover {
-  background-color: #cfd9de;
+  background-color: var(--submitHover--);
 }
 
 #submit-post:active {
-  transform: scale(0.97);
+  transform: scale(0.85);
 }
 
-/* =========================
-   Timeline
-========================= */
+/* Timeline */
 
 .timeline-section {
   padding: 20px;
@@ -145,9 +139,7 @@ textarea {
   flex-direction: column;
 }
 
-/* =========================
-   Responsive layout
-========================= */
+/*Responsive layout*/
 
 @media (max-width: 480px) {
   .app-container {
