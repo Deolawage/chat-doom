@@ -7,7 +7,7 @@ class StorageManager {
 
     }
 
-    savePosts() {
+    savePosts(posts) {
         try {
             const serializedPosts = JSON.stringify(posts);
             localStorage.setItem(this.storageKey, serializedPosts);

@@ -1,32 +1,24 @@
 import './styles/styles.css';
-import PostState from './state/PostState.js';
-import permanentPosts from './logic/permanentPosts.js';
-import createPost from './logic/postFactory.js';
-import StorageManager from './storage/storage.js';
 
-// Initialize application state
+import PostState from './state/Poststate.js';
+import permanentPosts from './logic/permanentPosts.js';
+import StorageManager from './storage/storage.js';
+import PostController from './logic/postController.js';
+
+// Initialize dependencies
 const postState = new PostState();
+const storage = new StorageManager();
 
 // Initialize permanent posts
 postState.setPermanentPosts(permanentPosts);
 
-// Initialize storage
-const storage = new StorageManager();
+// Initialize controller
+const postController = new PostController(postState, storage);
 
-// Restore regular posts
-const savedPosts = storage.loadPosts();
-postState.setRegularPosts(savedPosts);
+// Restore saved posts
+postController.initialize();
 
-// Remove expired posts
-postState.removeExpiredPosts();
+// Temporary testing access
+window.postController = postController;
 
-// Save the cleaned collection
-storage.savePosts(postState.getRegularPosts());
-
-// Expose for temporary console testing
-window.postState = postState;
-window.createPost = createPost;
-window.storage = storage;
-
-// Inspect application state
-console.log(postState.getDisplayPosts());
+console.log(postController.getDisplayPosts());
